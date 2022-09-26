@@ -1,0 +1,725 @@
+/* COLORS:
+ * darker green: 		#36a100
+ * light green:			#70a109
+ * yellow:				#ccc20e
+ * orange:				#c88708
+ */
+
+html {
+	height: 100%;
+	font-size: 20px;
+	font-family: Verdana;
+}
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+:root {
+	--dark-green: 	#36a100;
+	--light-green: 	#70a109;
+	--yellow:		#ccc20e;
+	--orange:		#c88708;
+}
+
+/* 
+ * Main View 
+ */
+ 
+.main_header {
+	background-color: black;
+	
+	display: flex;
+	flex-direction: row;
+	
+	justify-content: space-between;
+}
+
+.main_header .left {
+	width: 50%;
+	display: flex;
+}
+.main_header .left img {
+	
+}
+.main_header .left h1 {
+	margin: 0;
+	font-size: 2em;
+	box-sizing: border-box;
+	
+	text-transform: uppercase;
+}
+.main_header .left h1 a {
+	position: relative;
+	top: 25%;
+	display: inline-block;
+}
+.main_header .right {
+	margin: 0;
+	width: 50%;
+	
+	text-align: right;
+	font-size: 2em;
+	box-sizing: border-box;
+	align-self: center;
+}
+.main_header a {
+	color: white;
+	text-decoration: none;
+	text-transform: uppercase;
+	
+	transition: all 0.5s ease 0s;
+}
+.main_header a:hover {
+	color: #36a100;
+}
+
+.main {
+	background-color: #ffffff;
+	width: 100%;
+	flex-grow: 1;
+	
+	display: flex;
+	flex-direction: row;
+}
+.main_nav {
+	background-color: white;
+	width: 15%;
+	box-sizing: border-box;
+	border-right: 0.2em solid black;
+}
+.main_nav li {
+	
+	padding: 0.2em;
+}
+.main_nav a {
+	text-decoration: none;
+	padding: 0.5em;
+	color: white;
+	background-color: black;
+	display: inline-block;
+	box-sizing: border-box;
+	width: 100%;
+	text-align: center;
+	
+	transition: all 0.7s ease 0s;
+}
+
+.main_header #current {
+		color: #c88708;
+}
+
+.main #current {
+	background-color: #c88708;
+}
+
+.main_nav a:hover {
+	background-color: #36a100;
+	padding: 1em;
+}
+
+.main_section {
+	padding: 0.5em;
+	width: 85%;
+	box-sizing: border-box;
+	flex-grow: 1;
+}
+
+.section_head {
+	color: #36a100;
+}
+
+input[type=text], input[type=password] {
+	background-color: white;
+	transition: all 0.5s ease 0s;
+	padding: 0 1em;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+	background-color: var(--light-green);
+	color: white;
+}
+
+.error_tmp {
+	border: 2px solid black;
+	background-color: red;
+	color: white;
+	margin: 0.25em 0;
+	padding: 0.2em;
+	width: 30%;
+}
+.null_res {
+	border: 2px solid black;
+	margin: 0.25em 0;
+	padding: 0.2em;
+	width: 20%;
+	background-color: var(--orange);
+}
+
+/* 
+ * Schedules
+ */
+
+#schedules_form {
+	background-color: khaki;
+	
+	border: 2px solid black;
+	width: 30%;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+#schedules_form select{
+	width: 100%;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	border: none;
+	border-bottom: 0.15em solid black;
+}
+
+#schedules_form option {
+	margin: 0;
+	padding: 0.5em;
+	font-size: 1.5em;
+	background-color: #36a100;
+}
+
+#schedules_form option:nth-child(2n) {
+	background-color: #70a109;
+}
+
+#schedules_form option:checked {
+	background: #ccc20e linear-gradient(0deg, #ccc20e 0%, #ccc20e 100%)
+}
+
+#schedules_form #selected {
+	background-color: #c88708;
+}
+
+#schedules_form .buttons {
+	display: flex;
+}
+
+#schedules_form .buttons input {
+	width: 50%;
+	background-color: black;
+	border: none;
+	color: white;
+	padding: 0.8em;
+}
+#schedules_form .buttons input:hover {
+	background-color: #ccc20e;
+}
+
+
+#schedules_search, #stations_search {
+	width: 75%;
+	border: 2px solid black;
+	background-color: var(--orange);
+}
+#schedules_search .row_nameroute, #stations_search .row_nameroute {
+	display: flex;
+	padding: 0.5em;
+}
+#schedules_search .row_nameroute label {
+	width: 40%;
+}
+#schedules_search .row_nameroute div {
+	width: 60%;
+}
+#schedules_search .row, #stations_search .row {
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
+	text-align: center;
+	padding: 0.1em;
+	box-sizing: border-box;
+	background-color: var(--light-green);
+}
+#schedules_search .row:nth-child(2n + 1), #stations_search .row:nth-child(2n + 1) {
+	background-color: var(--dark-green);
+}
+#schedules_search .row_labels, #stations_search .row_labels {
+	background-color: black;
+	color: white;
+}
+#schedules_search .row label {
+	width: 33%;
+}
+#stations_search .row_labels > label {
+	width: 20%;
+}
+#stations_search .row_labels > label {
+	width: 80%;
+}
+#stations_search .row_nameroute > label, #stations_search .row_nameroute > div {
+	width: 50%;
+}
+#stations_search .row .order_label, #stations_search .row .namestation {
+	width: 20%;
+}
+
+/* 
+ * Ticket Search
+ */
+
+#ticket_form {
+	display: flex;
+	flex-direction: column;
+	widtht: 50%;
+	background-color: #c88708;
+	border: 2px solid black;
+}
+#ticket_form #ticket_main {
+	height: 80%;
+}
+#ticket_form #ticket_main {
+	display: flex;
+}
+#ticket_form #ticket_main .left, #ticket_form #ticket_main .right {
+	width: 50%;
+}
+#ticket_form #ticket_main .left {
+	display: flex;
+	flex-direction: column;
+	margin-left: 0.1em;
+}
+#ticket_form #ticket_main .left .row {
+	display: flex;
+	height: 100%;
+	justify-content: space-between;
+}
+#ticket_form #ticket_main .left .row label {
+	width: 20%;
+}
+#ticket_form #ticket_main .left .row input {
+	width: 80%;
+	border: 0.1em solid black;
+	margin: 0.05em;
+}
+
+#ticket_form #ticket_main .right {
+	display: flex;
+	flex-direction: column;
+}
+#ticket_form #ticket_main .right select {
+	margin: 0;
+	margin-bottom: 0.05em;
+	margin-right: 0.1em;
+	padding: 0;
+	border: 1px solid black;
+	text-align: center;
+}
+#ticket_form #ticket_main .right select option {
+	padding: 0.3em;
+	background-color: #36a100;
+}
+#ticket_form #ticket_main .right select option:nth-child(2n) {
+	background-color: #70a109;
+}
+#ticket_form #ticket_main option:checked {
+	background: #ccc20e linear-gradient(0deg, #ccc20e 0%, #ccc20e 100%)
+}
+#ticket_form .button {
+	border: none;
+	background-color: black;
+	color: white;
+	padding: 0.6em;
+	border-top: 2px solid black;
+}
+#ticket_form .button:hover {
+	background-color: #ccc20e;
+}
+
+#ticket_search {
+	background-color: var(--orange);
+	border: 2px solid black;
+	width: 100%;
+	box-sizing: border-box;
+	text-align: center;
+}
+#ticket_search .row {
+	display: flex;
+	font-size: 0.9em;
+	background-color: var(--dark-green);
+}
+#ticket_search .row:nth-child(2n) {
+	background-color: var(--light-green);
+}
+#ticket_search .row label{
+	width: 13%;
+}
+.nameroute_data {
+	width: 20% !important;
+}
+#ticket_search .row_labels {
+	background-color: black;
+	color: white;
+	padding: 0.2em;
+}
+#ticket_search #buy_first_button {
+	display: flex;
+	flex-grow: 1;
+}
+#ticket_search #buy_first_button .button {
+	width: 100%;
+	border: 1px solid black;
+	box-sizing: border-box;
+	background-color: black;
+	color: white;
+}
+#ticket_search #buy_first_button .button:hover {
+	background-color: var(--yellow);
+}
+
+/* 
+ * Logging
+ */
+
+#log_form {
+	display: flex;
+	flex-direction: column;
+	width: 40%;
+	border: 2px solid black;
+	background-color: #c88708;
+}
+#log_form .row {
+	width: 100%;
+	display: flex;
+	box-sizing: border-box;
+	padding: 0.1em;
+	justify-content: space-around;
+}
+#log_form .row input {
+	width: 73%;
+	border: 1px solid black;
+}
+#log_form .row label {
+	width: 25%;
+}
+#log_form .row .log_button {
+	width: 100%;
+	padding: 0.4em;
+	border: 2px solid black;
+	color: white;
+	background-color: black;
+}
+#log_form .row .log_button:hover {
+	background-color: #ccc20e;
+}
+#log_form .reg_button {
+	background-color: black;
+	width: 100%;
+}
+#log_form .reg_button a {
+	display: inline-block;
+	text-align: center;
+	box-sizing: border-box;
+	border: 2px solid black;
+	width: 100%;
+	color: white;
+	text-decoration: none;
+}
+#log_form .reg_button a:hover {
+	background-color: #70a109;
+}
+
+/* 
+ * Registration
+ */
+
+#reg_form .main_form {
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	margin-bottom: 0.5em;
+	
+	border: 2px solid black;
+	background-color: #c88708;
+}
+#reg_form .g-recaptcha {
+	margin-bottom: 0.5em;
+}
+
+#reg_form .main_form .row {
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+}
+#reg_form .main_form .row label {
+	width: 23%;
+}
+#reg_form .main_form .row input {
+	border: 1px solid black;
+	margin: 1px 1px;
+	width: 73%;
+}
+#reg_form #reg_check {
+	display: flex;
+	justify-content: flex-start;
+	margin-left: 1%;
+}
+#reg_form #reg_check input {
+	width: 10%;
+}
+#reg_form > input {
+	background-color: black;
+	border: 2px solid black;
+	width: 10%;
+	padding: 0.3em;
+	color: white;
+}
+#reg_form > input:hover {
+	background-color: #ccc20e;
+}
+
+/* 
+ * Add Money
+ */
+
+#money_form {
+	background-color: #c88708;
+	border: 2px solid black;
+	width: 30%;
+	display: flex;
+	flex-direction: column;
+}
+#money_form .main_form {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 0.2em;
+	padding: 0.2em;
+}
+#money_form .main_form label {
+	width: 40%;
+}
+#money_form .main_form input {
+	width: 60%;
+	border: 1px solid black;
+}
+#money_form > input {
+	border: 2px solid black;
+	background-color: black;
+	color: white;
+	padding: 0.2em;
+	margin: 0.1em;
+}	
+#money_form > input:hover {
+	background-color: #ccc20e;
+}
+
+/* 
+ * Comments
+ */
+
+textarea {
+	resize: none;
+	border: 1px solid black;
+}
+#com_form {
+	display: flex;
+	flex-direction: column;
+	border: 2px solid black;
+	width: 50%;
+	padding: 0.1em;
+	background-color: #c88708;
+}
+#com_form > input {
+	border: 1px solid black;
+	color: white;
+	background-color: black;
+	padding: 0.2em;
+}
+#com_form > input:hover {
+	background-color: #ccc20e;
+}
+.comment {
+	width: 90%;
+	border: 2px solid black;
+	margin: 0.5em 0;
+	display: flex;
+	background-color: var(--dark-green);
+	color: black;
+	padding: 0.2em;
+}
+.comment:nth-child(2n) {
+	background-color: var(--light-green);
+}
+.comment .left {
+	display: flex;
+	flex-direction: column;
+	padding: 0.2em;
+	margin-right: 0.2em;
+}
+.comment .left label:first-child {
+	font-weight: bold;
+}
+.comment .right {
+	flex-grow: 1;
+	background-color: var(--orange);
+	font-size: 0.8em;
+	border: 2px solid black;
+}
+
+/* 
+ * Buying tickets
+ */
+
+#ticket_data {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	background-color: #36a100;
+	border: 2px solid black;
+}
+#ticket_data .row {
+	display: flex;
+	justify-content: space-between;
+	
+}
+#ticket_data .row:nth-child(2n) {
+	background-color: #70a109;
+}
+#ticket_data .row label {
+	font-weight: bold;
+	width: 40%;
+}
+#ticket_data .row div {
+	width: 60%;
+}
+#discount_form {
+	width: 25%;
+	margin: 0.25em 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+#discount_form select{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	border: 2px solid black;
+	background-color: #c88708;
+	padding: 0.2em;
+}
+#discount_form select option {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	background-color: #36a100;
+}
+#discount_form select option:nth-child(2n) {
+	background-color: #70a109;
+}
+
+#buy_button {
+	border: 2px solid black;
+	color: white;
+	background-color: black;
+	width: 25%;
+	padding: 0.2em;
+}
+#buy_button:hover {
+	background-color: #ccc20e;
+}
+#buy_button:disabled {
+  background-color: black;
+  color: #666666;
+}
+
+/* 
+ * User
+ */
+
+#user_data {
+	width: 50%;
+	background-color: #c88708;
+	border: 2px solid black;
+	display: flex;
+	flex-direction: column;
+}
+#user_data .row {
+	width: 100%;
+	display: flex;
+	padding: 0.1em;
+	box-sizing: border-box;
+}
+#user_data .row .left {
+	width: 50%;
+}
+#user_data .row a {
+	width: 25%;
+	font-size: 0.8em;
+	padding: 0.2em;
+	text-align: center;
+	background-color: black;
+	border: 1px solid black;
+	color: white;
+	text-decoration: none;
+}
+#user_data .row a:nth-child(2n) {
+	margin-right: 0.1em;
+}
+#user_data .row a:hover{
+	background-color: #ccc20e;
+}
+#user_data .row label {
+	width: 30%;
+	font-weight: bold;
+}
+#user_data .row .data {
+	width: 70%;
+}
+#your_tickets {
+	background-color: var(--dark-green);
+	border: 2px solid black;
+	width: 90%;
+}
+#your_tickets .ticket_labels {
+	background-color: black;
+	color: white;
+	display: flex;
+}
+#your_tickets .ticket_labels label {
+	width: 20%;
+	text-align: center;
+	padding: 0.2em;
+}
+#your_tickets .ticket_info {
+	display: flex;
+}
+#your_tickets .ticket_info label {
+	width: 20%;
+	text-align: center;
+}
+#your_tickets .ticket_info:nth-child(2n) {
+	background-color: var(--light-green);
+}
+
+/*
+ * Map
+ */
+#map {
+	border: 2px solid black;
+	width: 100%;
+	margin-top: 0.5em;
+}
+#map img {
+	max-width: 100%;
+}
+#download_map {
+	display: inline-block;
+	border: 2px solid black;
+	background-color: black;
+	color: white;
+	text-decoration: none;
+	padding: 0.5em;
+}
+#download_map:hover {
+	background-color: var(--yellow);
+}
